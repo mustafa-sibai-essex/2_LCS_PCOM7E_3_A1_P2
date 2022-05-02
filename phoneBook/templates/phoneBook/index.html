@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "phoneBook/index.css" %}">
+    <title>Phone Book</title>
+</head>
+
+<body>
+    <h1>Welcome to LCS_PCOM7E_A1_P1 Phone Book Assignemnt</h1>
+
+    <div class="content">
+        <div class="add-user-div">
+            <form action="{% url 'search' %}" method="get">
+                <input type="search" id="search_box" name="search_box" placeholder="What are you searching for?" />
+                <input type="submit" value="Search" />
+            </form>
+            <form action="{% url 'add' %}">
+                <input type="submit" value="Add new user" />
+            </form>
+        </div>
+
+        <div class="table">
+            <ul>
+                <li><input type="button" value="id"           onclick="location.href='{% url 'sort' 'id' %}';" /></li>
+                <li><input type="button" value="First Name"   onclick="location.href='{% url 'sort' 'first_name' %}';" /></li>
+                <li><input type="button" value="Last Name"    onclick="location.href='{% url 'sort' 'last_name' %}';" /></li>
+                <li><input type="button" value="Phone Number" onclick="location.href='{% url 'sort' 'phone_number' %}';" /></li>
+                <li><input type="button" value="Email"        onclick="location.href='{% url 'sort' 'email' %}';" /></li>
+                <li>Action</li>
+            </ul>
+            {% for user in users %}
+            <ul class="t">
+                <li>{{ user.id }}</li>
+                <li>{{ user.first_name }}</li>
+                <li>{{ user.last_name }}</li>
+                <li>{{ user.phone_number }}</li>
+                <li>{{ user.email }}</li>
+                <li>
+                    <form action="{% url 'remove' forloop.counter0 %}">
+                        <input type="submit" value="Remove" />
+                    </form>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static "phoneBook/add-user.css" %}">
+        <title>Phone Book - Add new user</title>
+    </head>
+    <body>
+        <div class="content">
+            <form action="{% url 'user_form_post' %}" method="post">
+                {% csrf_token %}
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name"></input>
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name"></input>
+                <label for="phone_number">Phone Number</label>
+                <input type="text" id="phone_number" name="phone_number"></input>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email"></input>
+                <input type="submit" />
+            </form>
+        </div>
+    </body>
+</html>

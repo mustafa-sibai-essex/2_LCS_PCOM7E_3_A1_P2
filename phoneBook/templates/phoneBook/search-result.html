@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "phoneBook/index.css" %}">
+    <title>Phone Book - Search result</title>
+</head>
+
+<body>
+    <h1>Search result</h1>
+
+    <div class="content">
+        <div class="table">
+            <ul>
+                <li><input type="button" value="id"           onclick="location.href='{% url 'sort' 'id' %}';" /></li>
+                <li><input type="button" value="First Name"   onclick="location.href='{% url 'sort' 'first_name' %}';" /></li>
+                <li><input type="button" value="Last Name"    onclick="location.href='{% url 'sort' 'last_name' %}';" /></li>
+                <li><input type="button" value="Phone Number" onclick="location.href='{% url 'sort' 'phone_number' %}';" /></li>
+                <li><input type="button" value="Email"        onclick="location.href='{% url 'sort' 'email' %}';" /></li>
+            </ul>
+            {% for user in users %}
+            <ul class="t">
+                <li>{{ user.id }}</li>
+                <li>{{ user.first_name }}</li>
+                <li>{{ user.last_name }}</li>
+                <li>{{ user.phone_number }}</li>
+                <li>{{ user.email }}</li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

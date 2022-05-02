@@ -1,0 +1,52 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 20;
+    background-color: black;
+}
+
+.add-user-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+
+
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.add-user-div input[type=search] {
+    width: 200px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    display: flex;
+    flex-direction: row;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    width: 250px;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}

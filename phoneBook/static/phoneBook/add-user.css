@@ -1,0 +1,16 @@
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    border-style: solid;
+}
+
+form input {
+    margin-bottom: 20px;
+}
