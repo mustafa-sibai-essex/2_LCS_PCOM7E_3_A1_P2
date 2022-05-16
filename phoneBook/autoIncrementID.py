@@ -7,3 +7,7 @@ class AutoIncrementID():
     def increment(self):
         self.id += 1
         return self.id
+
+    def reset(self):
+        self.id = -1
+        return self.id

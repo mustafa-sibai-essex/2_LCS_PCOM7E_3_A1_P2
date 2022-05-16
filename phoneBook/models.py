@@ -13,7 +13,7 @@ class Users():
     def __init__(self):
         pass
 
-    def add_user_form_post(self, user: User):
+    def add_user(self, user: User):
         self.database.append(user)
 
     def sort_users(self, attr):

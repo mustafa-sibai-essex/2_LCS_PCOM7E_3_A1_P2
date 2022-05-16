@@ -21,14 +21,13 @@ def add_user_form_post(request):
         form = UserForm(request.POST)
 
         if form.is_valid():
-            users.add_user_form_post(
-                User(
-                    autoIncrementID.increment(),
-                    form.cleaned_data['first_name'],
-                    form.cleaned_data['last_name'],
-                    form.cleaned_data['phone_number'],
-                    form.cleaned_data['email']
-                ))
+            users.add_user(User(
+                autoIncrementID.increment(),
+                form.cleaned_data['first_name'],
+                form.cleaned_data['last_name'],
+                form.cleaned_data['phone_number'],
+                form.cleaned_data['email']
+            ))
             return redirect('phone_book')
 
     return render(request, 'phoneBook/index.html')
