@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "phoneBook/index.css" %}">
     <title>Phone Book</title>
+    <script src="{% static "phoneBook/index.js" %}"></script>
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                 <li>{{ user.email }}</li>
                 <li>
                     <form action="{% url 'remove' forloop.counter0 %}">
-                        <input type="submit" value="Remove" />
+                        <input type="submit" value="Remove" onclick="return removeConfirmation();"/>
                     </form>
                 </li>
             </ul>
@@ -51,5 +52,4 @@
         </div>
     </div>
 </body>
-
 </html>
